@@ -26,20 +26,10 @@ resource "aws_s3_object" "folder_files" {
   content_type = lookup(local.content_types, split(".", each.value)[1], "text/html")
 }
 
-#WORKS 1 resource "aws_s3_object" "apifile" {
-#WORKS 1   bucket = var.upload_bucket_id
-#WORKS 1   source = var.script_js_file
-#WORKS 1   key    = "api.js"
-#WORKS 1 
-#WORKS 1   # Set Content-Type based on the local.content_type
-#WORKS 1   content_type = lookup(local.content_types, var.script_js_file, "text/html")
-#WORKS 1 }
-
 resource "aws_s3_object" "apifile" {
   bucket = var.upload_bucket_id
   key    = var.script_js_name
   content = var.script_jscontent
-  # Set Content-Type based on the local.content_type
   content_type = "application/javascript"
 }
 

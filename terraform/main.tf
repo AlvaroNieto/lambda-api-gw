@@ -91,15 +91,6 @@ module "api_gateway" {
   stage_name = "default"
 }
 
-# Terraform trick to really force dependency only after file is created
-resource "null_resource" "ensure_script_js_exists" {
-  provisioner "local-exec" {
-    command = "test -f ${local_file.script_js.filename}"
-  }
-
-  depends_on = [local_file.script_js]
-}
-
 module "s3site-upload" {
   source = "./modules/storage-upload"
   upload_bucket_id = module.s3site-create.bucket_id
