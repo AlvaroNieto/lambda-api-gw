@@ -4,7 +4,7 @@ import boto3
 from decimal import Decimal
 
 dynamodb = boto3.resource('dynamodb')
-table = dynamodb.Table('VisitCounter-lambda')
+table = dynamodb.Table('VisitCounter-lambda-test')
 
 #Avoiding get+update method for dynamodb on-demand usage.
 def lambda_handler(event, context):
