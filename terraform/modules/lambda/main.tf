@@ -55,9 +55,6 @@ resource "aws_lambda_function" "visit_counter_lambda" {
   handler       = var.handler
   description   = "Acccess a dynamodb and i++ a curvisits counter"
 
-  #filename         = var.filename
- # source_code_hash = filebase64sha256("../lambda_function.zip")
- 
   filename         = "../lambda_function.zip"
   source_code_hash = data.archive_file.lambda.output_base64sha256
 

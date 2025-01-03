@@ -1,3 +1,4 @@
+# Testing if the Github Action works.
 import json
 import boto3
 from decimal import Decimal
@@ -5,7 +6,7 @@ from decimal import Decimal
 dynamodb = boto3.resource('dynamodb')
 table = dynamodb.Table('VisitCounter-lambda')
 
-#Avoiding get+update method for dynamodb on-demand usage. 
+#Avoiding get+update method for dynamodb on-demand usage.
 def lambda_handler(event, context):
     response = table.update_item(
         Key={
