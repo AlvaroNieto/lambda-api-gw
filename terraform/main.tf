@@ -85,7 +85,7 @@ module "lambda" {
 
 module "api_gateway" {
   source     = "./modules/api_gateway"
-  api_name   = "visit-counter-api"
+  api_name   = "visit-counter-apigw"
   path_part  = "visit"
   lambda_arn = module.lambda.lambda_arn
   stage_name = "default"
