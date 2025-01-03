@@ -48,7 +48,7 @@ resource "aws_iam_role_policy_attachment" "attach_dynamodb_policy" {
 
 
 
-resource "aws_lambda_function" "visit_counter_lambda" {
+resource "aws_lambda_function" "visit_counter_lmbd" {
   function_name = var.lambda_name
   runtime       = var.runtime
   role          = aws_iam_role.lambda_exec_role.arn

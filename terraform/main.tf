@@ -69,7 +69,7 @@ output "bucket_url" {
 
 module "lambda" {
   source             = "./modules/lambda"
-  lambda_name        = "visit_counter_lambda"
+  lambda_name        = "visit_counter_lmbd"
   runtime            = "python3.13"
   handler            = "lambda_function.lambda_handler"
   filename           = "../lambda_function.zip"
