@@ -5,7 +5,7 @@ data "archive_file" "lambda" {
 }
 
 
-resource "aws_iam_role" "lambda_execution_role" {
+resource "aws_iam_role" "lambda_exec_role" {
   name               = var.role_name
   assume_role_policy = jsonencode({
     Version = "2012-10-17",
@@ -42,7 +42,7 @@ resource "aws_iam_policy" "dynamodb_access_policy" {
 }
 
 resource "aws_iam_role_policy_attachment" "attach_dynamodb_policy" {
-  role       = aws_iam_role.lambda_execution_role.name
+  role       = aws_iam_role.lambda_exec_role.name
   policy_arn = aws_iam_policy.dynamodb_access_policy.arn
 }
 
@@ -51,7 +51,7 @@ resource "aws_iam_role_policy_attachment" "attach_dynamodb_policy" {
 resource "aws_lambda_function" "visit_counter_lambda" {
   function_name = var.lambda_name
   runtime       = var.runtime
-  role          = aws_iam_role.lambda_execution_role.arn
+  role          = aws_iam_role.lambda_exec_role.arn
   handler       = var.handler
   description   = "Acccess a dynamodb and i++ a curvisits counter"
 

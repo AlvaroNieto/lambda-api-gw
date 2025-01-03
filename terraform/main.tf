@@ -73,8 +73,8 @@ module "lambda" {
   runtime            = "python3.13"
   handler            = "lambda_function.lambda_handler"
   filename           = "../lambda_function.zip"
-  role_name          = "lambda_execution_role"
-  policy_name        = "DynamoDBAccessPolicy"
+  role_name          = "lambda_exec_role"
+  policy_name        = "DynamoDB_AccessPolicy"
   dynamodb_table_arn = module.dynamodb.table_arn
   environment_variables = {
     TABLE_NAME = module.dynamodb.table_name
