@@ -51,7 +51,7 @@ resource "local_file" "script_py" {
 
 module "dynamodb" {
   source     = "./modules/dynamodb"
-  table_name = "VisitCounter-lambda"
+  table_name = "VisitCounter-lambda-test"
   main_key   = "visitor_id"
   tags       = { Environment = "test" }
 }
