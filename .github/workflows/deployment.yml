@@ -26,13 +26,17 @@ jobs:
           terraform_version: 1.10.2
 
       - name: Initialize Terraform
+        working-directory: ./terraform
         run: terraform init
 
       - name: Validate Terraform configuration
+        working-directory: ./terraform
         run: terraform validate
 
       - name: Plan Terraform deployment
+        working-directory: ./terraform
         run: terraform plan -out=tfplan
 
       - name: Apply Terraform deployment
+        working-directory: ./terraform
         run: terraform apply -auto-approve tfplan
