@@ -34,3 +34,13 @@ Upload the files after every resource and files are created. If we do it before,
 Result: 
 
 ![Image](pic.jpg "Result Image")
+
+## Github Actions
+
+Used this project to test GitHub Actions:
+
+![Image](pic2.jpg "Result Image")
+
+And in the Lambda Function:
+
+![Image](pic3.jpg "Result Image")
